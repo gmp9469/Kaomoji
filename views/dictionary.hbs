@@ -1,0 +1,26 @@
+<table>
+    <body>
+        <form method="GET" action="/dictionary" style= "width: 40wv; height: 30wv; display: inline-block;">
+            <label for="kaomoji"></label>
+            <textarea id="kaomoji" name="emotion" rows="3" cols="55" placeholder="Search emotion..."></textarea>
+            <button type="submit" style="float: right;">Submit</button>
+        </form>
+    </body>
+    <tbody>
+        {{#each kaomojis}}
+            <tr>
+                <td>{{this.value}}</td>
+                <td>{{this.emotions}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+<body>
+    <form method="POST" action="/dictionary" style= "display: inline-block ">
+        <label for="value"></label>
+        <input type="text" name="value" id="value" placeholder="Enter the value...">
+        <label for="emotions"></label>
+        <input type="text" name="emotions" id="emotions" placeholder="Enter emotions...">
+        <button type="submit">Add</button>
+    </form>
+</body>
